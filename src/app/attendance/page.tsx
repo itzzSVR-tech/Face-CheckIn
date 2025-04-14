@@ -80,14 +80,14 @@ const AttendancePage: React.FC = () => {
         </Card>
 
         <div className="flex gap-2">
-          <Button onClick={captureAttendance} variant="accent" disabled={!isWebcamActive}>
+          <Button onClick={captureAttendance} className='text-xl bg-slate-400 hover:bg-slate-600' disabled={!isWebcamActive}>
             Capture Attendance
           </Button>
         </div>
 
         <Card className="shadow-md">
           <CardContent className="p-4">
-            <Label htmlFor="newAttendee">Add New Attendee</Label>
+            <Label htmlFor="newAttendee" className="text-2xl">Add New Attendee</Label>
             <div className="flex gap-2 mt-2">
               <Input
                 id="newAttendee"
@@ -95,8 +95,9 @@ const AttendancePage: React.FC = () => {
                 placeholder="Attendee Name"
                 value={newAttendeeName}
                 onChange={(e) => setNewAttendeeName(e.target.value)}
+                className='border-indigo-400 border-2 border-spacing-0'
               />
-              <Button onClick={addAttendee}>Add</Button>
+              <Button onClick={addAttendee} className='text-xl bg-slate-400 hover:bg-slate-600'>Add</Button>
             </div>
           </CardContent>
         </Card>
@@ -106,9 +107,9 @@ const AttendancePage: React.FC = () => {
       <div className="md:w-1/2 flex flex-col gap-4">
         <Card className="shadow-md">
           <CardContent className="p-4">
-            <h2 className="text-lg font-semibold">Attendance Report</h2>
+            <h2 className="text-3xl font-semibold">Attendance Report</h2>
             <div className="mt-4">
-              <h3 className="text-md font-semibold">Present Attendees</h3>
+              <h3 className="text-lg font-semibold">Present Attendees</h3>
               <ul className="list-disc list-inside">
                 {presentAttendees.map((attendee, index) => (
                   <li key={index}>{attendee}</li>
@@ -116,7 +117,7 @@ const AttendancePage: React.FC = () => {
               </ul>
             </div>
             <div className="mt-4">
-              <h3 className="text-md font-semibold">Absent Attendees</h3>
+              <h3 className="text-lg font-semibold">Absent Attendees</h3>
               <ul className="list-disc list-inside">
                 {absentAttendees.map((attendee, index) => (
                   <li key={index}>{attendee}</li>
@@ -124,7 +125,7 @@ const AttendancePage: React.FC = () => {
               </ul>
             </div>
             <div className="mt-4">
-              <h3 className="text-md font-semibold">Unidentified Faces</h3>
+              <h3 className="text-lg font-semibold">Unidentified Faces</h3>
               <p>{unidentifiedFaces}</p>
             </div>
           </CardContent>
@@ -132,7 +133,7 @@ const AttendancePage: React.FC = () => {
 
         <Card className="shadow-md">
           <CardContent className="p-4">
-            <h2 className="text-lg font-semibold">Known Attendees</h2>
+            <h2 className="text-3xl font-semibold">Known Attendees</h2>
             <ul className="mt-4 flex flex-wrap gap-2">
               {knownAttendees.map((attendee, index) => (
                 <li key={index}>
